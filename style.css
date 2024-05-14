@@ -84,6 +84,7 @@ p{
 }
 .cont{
   width: max(50%, 800px);
+  padding: 40px 0;
 }
 .com-cont{
   background: var(--Very-light-gray);

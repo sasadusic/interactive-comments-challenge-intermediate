@@ -31,6 +31,12 @@ fetch("data.json")
             const userCont = document.createElement('div')
             userCont.classList.add('user-cont')
             userCont.innerHTML = data.currentUser.username
+
+            const userImg = document.createElement('img')
+            userImg.src = data.currentUser.image.png
+            userImg.classList.add('user-img')
+            userCont.appendChild(userImg)
+
             cont.appendChild(userCont)
             // Current User
 
