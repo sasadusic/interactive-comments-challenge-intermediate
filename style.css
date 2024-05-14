@@ -105,7 +105,32 @@ p{
   padding: 18px;
   border-radius: 12px;
   margin-bottom: 18px;
-  
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  justify-content: space-between;
+}
+.btn{
+  border: none;
+  outline-color: transparent;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: var(--Moderate-blue);
+  color: var(--Very-light-gray);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:hover{
+  background: var(--Light-grayish-blue);
+}
+.user-img{
+  width: 40px;
+}
+.input{
+  width: 100%;
+  border: none;
+  padding: 8px 12px;
+
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (width < 1200px)  {}
