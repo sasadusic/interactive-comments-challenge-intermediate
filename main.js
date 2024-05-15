@@ -38,6 +38,7 @@ fetch("data.json")
             userCont.appendChild(userImg)
 
             const input = document.createElement('input')
+            input.type = 'textarea'
             input.className = 'input'
             input.placeholder = 'Add a comment'
             userCont.appendChild(input)
