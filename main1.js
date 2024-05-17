@@ -1,4 +1,4 @@
-const main = document.querySelector('.main')
+const cont = document.querySelector('.cont')
 let jsonData
 
 async function fetchData() {
@@ -21,47 +21,72 @@ fetchData().then(() => {
     // With no replies
     if(comment.replies.length === 0){
         
-        const cont = document.createElement('div')
-        cont.classList.add("cont")
+        const com = document.createElement('div')
+        com.classList.add("com-cont")
         const p = document.createElement('p')
         p.classList.add('phar')
         p.innerText = comment.content
 
-        cont.appendChild(p)
-        main.appendChild(cont)
+        com.appendChild(p)
+        cont.appendChild(com)
     }
     // With replies
     else{
         const bigCont = document.createElement('div')
         bigCont.classList.add("big-cont")
 
-        const cont = document.createElement('div')
-        cont.classList.add("cont")
+        const com = document.createElement('div')
+        com.classList.add("com-cont")
         
         const p = document.createElement('p')
         p.classList.add('phar')
         p.innerText = comment.content
 
-        cont.appendChild(p)
-        bigCont.appendChild(cont)
+        com.appendChild(p)
+        bigCont.appendChild(com)
         // Replies
         comment.replies.forEach(replie => {
-            const cont = document.createElement('div')
-            cont.classList.add("cont")
-            cont.classList.add("replie")
+            const com = document.createElement('div')
+            com.classList.add("com-cont")
+            com.classList.add("replie-cont")
             
             const p = document.createElement('p')
             p.classList.add('phar')
             p.classList.add('phar')
             p.innerText = replie.content
             
-            cont.appendChild(p)
-            bigCont.appendChild(cont)
+            com.appendChild(p)
+            bigCont.appendChild(com)
         })
         // Replies
 
-        main.appendChild(bigCont)
+        cont.appendChild(bigCont)
     }
 }
   )
+
+
+  // Current User
+  const userCont = document.createElement('div')
+  userCont.classList.add('user-cont')
+  // userCont.innerHTML = data.currentUser.username
+  
+  const userImg = document.createElement('img')
+  userImg.src = jsonData.currentUser.image.png
+  userImg.classList.add('user-img')
+  userCont.appendChild(userImg)
+  
+  const input = document.createElement('input')
+  input.type = 'textarea'
+  input.className = 'input'
+  input.placeholder = 'Add a comment'
+  userCont.appendChild(input)
+  
+  const btn = document.createElement('button')
+  btn.innerHTML = 'Send'
+  btn.classList.add('btn')
+  userCont.appendChild(btn)
+  
+  cont.appendChild(userCont)
+  // Current User
 })
